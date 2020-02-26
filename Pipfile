@@ -7,6 +7,11 @@ verify_ssl = true
 
 [packages]
 django = "*"
+mysqlclient = "*"
+django-cors-headers = "*"
+djangorestframework = "*"
+requirements-txt = "*"
+faker = "*"
 
 [requires]
 python_version = "3.6"
