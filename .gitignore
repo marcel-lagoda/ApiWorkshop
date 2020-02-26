@@ -256,3 +256,5 @@ tags
 
 # End of https://www.gitignore.io/api/git,vim,venv,python,virtualenv,pycharm+all
 
+# Django secret data
+secrets.json
