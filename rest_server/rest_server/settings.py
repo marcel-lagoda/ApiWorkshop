@@ -84,6 +84,7 @@ DATABASES = {
         'PASSWORD': get_secret('DB_PASSWORD'),
         'NAME': get_secret('DB_NAME'),
         'LOCALHOST': get_secret('DB_HOST'),
+        'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
 
