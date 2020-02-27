@@ -1,9 +1,10 @@
-from .models import Book
-from .serializers import BookSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.http import Http404
+
+from .models import Book
+from .serializers import BookSerializer
 
 
 class BookList(APIView):
@@ -50,4 +51,3 @@ class BookView(APIView):
     def post(self, request, id, format=None):
         pass
 
-# Create your views here.
