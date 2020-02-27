@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import migrations
-from books.worker import populate_db
+from api_books.worker import populate_db
 
 
 def populate(apps, schema_editor):
