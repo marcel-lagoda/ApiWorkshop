@@ -2,6 +2,6 @@ from django.urls import path
 
 from . import apiviews
 
-urlsettings = [
-    # path('', views.as_view())
+urlpatterns = [
+    path('movie/', apiviews.MovieList.as_view()),
 ]
