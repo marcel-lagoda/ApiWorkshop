@@ -26,3 +26,6 @@ class Movie(models.Model):
     director = models.CharField(max_length=256)
     date = models.DateField()
     genre = models.CharField(max_length=21, choices=GENRES)
+
+    def __str__(self):
+        return self.title
