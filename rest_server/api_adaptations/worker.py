@@ -39,11 +39,12 @@ def fake_movie(locale='en=US'):
     print(m)
     m.save()
 
-    def populate_db():
-        locales = ["pl-PL", "en-US", "es-ES", "de-DE", "cs-CZ", "fr-FR", "it-IT",
-                   "hr-HR", "nl-NL", "dk-DK", "fi-FI", "lt-LT", "pt-PT", "no-NO",
-                   "sv-SE", "tr-TR"]
-        for i in range(0, 100):
-            loc = choice(locales)
-            fake_movie(loc)
+
+def populate_db():
+    locales = ["pl-PL", "en-US", "es-ES", "de-DE", "cs-CZ", "fr-FR", "it-IT",
+               "hr-HR", "nl-NL", "dk-DK", "fi-FI", "lt-LT", "pt-PT", "no-NO",
+               "sv-SE", "tr-TR"]
+    for i in range(0, 100):
+        loc = choice(locales)
+        fake_movie(loc)
 
