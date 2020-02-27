@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=200)),
                 ('isbn', models.CharField(max_length=17)),
                 ('genre', models.IntegerField(choices=[(1, 'Romans'), (2, 'Obyczajowa'), (3, 'Sci-fi i fantasy'), (4, 'Literatura faktu'), (5, 'Popularnonaukowa'), (6, 'Poradnik'), (7, 'Kryminał, sensacja')])),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='books.Author')),
+                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api_books.Author')),
             ],
         ),
         migrations.CreateModel(
@@ -42,6 +42,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='book',
             name='publisher',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='books.Publisher'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api_books.Publisher'),
         ),
     ]

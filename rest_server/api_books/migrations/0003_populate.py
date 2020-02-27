@@ -12,7 +12,7 @@ def populate(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('books', '0002_auto_20161201_1705'),
+        ('api_books', '0002_auto_20161201_1705'),
     ]
 
     operations = [

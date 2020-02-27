@@ -1,4 +1,3 @@
-
 from .models import Book
 from .serializers import BookSerializer
 from rest_framework.views import APIView
