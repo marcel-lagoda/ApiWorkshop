@@ -1,10 +1,16 @@
-from faker import Factory
-from random import choice
+from faker import Faker
 from .models import Movie, GENRES
+from api_books.models import Book
+import random
+
+fake = Faker()
 
 
-def fake_movie(locale='en=US'):
-    fake = Factory.create(locale)
+def fake_movies(num_movies=100, overwrite=False):
+    if overwrite:
+        print("Overwritnig existing data")
+        Movie.objects.all().delete()
+
     t1 = ["Tajemnica", "Śmierć", "Kod", "Zabójstwo", "Śledztwo", "Proces",
           "Gra", "Bogactwo", "Teoria", "Miłość", "Dane", "Szyfry", "Zagadka",
           "Manipulacja", "Szansa", "Żal", "Broń", "Zdrowie", "Herezja",
@@ -26,25 +32,19 @@ def fake_movie(locale='en=US'):
           "tyrana", "milionerów", "w wielkim mieście", "dla dzieci",
           "w ciemności"]
 
-    title = f'{choice(t1)} {choice(t2)}'
-    director = f'{fake.first_name()} {fake.last_name()}'
-    date = fake.date()
-    genre = choice(GENRES)[0]
+    for i in range(num_movies):
+        title = f'{random.choice(t1)} {random.choice(t2)}'
+        director = f'{fake.first_name()} {fake.last_name()}'
+        date = fake.date()
+        genre = random.choice(GENRES)[0]
+        books = list(Book.objects.all())
+        book = random.choice(books)
+        movie = Movie.objects.create(
+            title=title,
+            director=director,
+            date=date,
+            genre=genre,
+            book=book
+        )
 
-    m = Movie()
-    m.title = title
-    m.director = director
-    m.date = date
-    m.genre = genre
-    print(m)
-    m.save()
-
-
-def populate_db():
-    locales = ["pl-PL", "en-US", "es-ES", "de-DE", "cs-CZ", "fr-FR", "it-IT",
-               "hr-HR", "nl-NL", "dk-DK", "fi-FI", "lt-LT", "pt-PT", "no-NO",
-               "sv-SE", "tr-TR"]
-    for i in range(0, 100):
-        loc = choice(locales)
-        fake_movie(loc)
-
+        movie.save()
