@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Local
     'api_books',
     'api_adaptations',
+    'api_showtimes',
 
     # 3rd party
     'rest_framework',
