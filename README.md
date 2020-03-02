@@ -6,4 +6,5 @@ A simple REST Api in Django Rest Framework displaying json data of books --> boo
 `Django`<br>
 `Django Rest Framework`<br>
 `Python`<br>
-`Git`
+`Git`<br>
+`MySQL`
