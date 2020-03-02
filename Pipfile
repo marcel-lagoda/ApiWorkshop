@@ -12,6 +12,7 @@ django-cors-headers = "*"
 djangorestframework = "*"
 requirements-txt = "*"
 faker = "*"
+factory-boy = "*"
 
 [requires]
 python_version = "3.6"
